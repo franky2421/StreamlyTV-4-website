@@ -1,125 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StreamlyTV</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StreamlyTV AI Assistant</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#home">
-      <img src="file_00000000a5c071fab857f134cfe758e3.png" alt="StreamlyTV Logo" class="brand-logo">
-      <span>Streamly<span>TV</span></span>
-    </a>
-    <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#features">Features</a>
-      <a href="#channels">Channels</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="whatsapp-top" href="https://wa.me/61410350514">☘ WhatsApp Us</a>
-  </header>
+<header>
+  <h1>StreamlyTV AI</h1>
+  <p>Your 24/7 customer support and sales assistant</p>
+</header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-text">
-        <p class="badge">THE ULTIMATE STREAMING EXPERIENCE</p>
-        <h1>Everything You Want,<br>All in <span>One Place.</span></h1>
-        <p class="subtitle">Enjoy 50,000+ Live TV Channels and 100,000+ Movies & TV Series in HD, FHD & 4K Quality. No contracts. No hidden fees. Cancel anytime.</p>
-        <div class="stats">
-          <div>▣<b>50,000+</b><small>Live TV Channels</small></div>
-          <div>▤<b>100,000+</b><small>Movies & TV Series</small></div>
-          <div>4K<b>4K UHD</b><small>Ultra HD Quality</small></div>
-          <div>☊<b>Premium</b><small>Dolby Audio</small></div>
-        </div>
-        <div class="buttons">
-          <a href="#pricing" class="btn primary">View Plans & Pricing →</a>
-          <a href="#how" class="btn secondary">How It Works ⏵</a>
-        </div>
-      </div>
-      <div class="tv-wrap">
-        <div class="tv">
-          <div class="tile red">NETFLIX</div><div class="tile blue">prime video</div><div class="tile white">Disney+</div><div class="tile white">HBO</div>
-          <div class="tile fight">BOXING</div><div class="tile fight">UFC</div><div class="tile white">Avengers</div><div class="tile green">hulu</div>
-          <div class="tile red">UFC</div><div class="tile purple">beIN SPORTS</div><div class="tile white">FOX SPORTS</div><div class="tile fight">SPORTS</div>
-        </div>
-        <div class="stand"></div>
-      </div>
-    </section>
+<main>
+  <section class="hero">
+    <h2>Welcome to StreamlyTV</h2>
+    <p>Choose your plan, get help with setup, or chat with our AI assistant.</p>
+    <div class="plans">
+      <a href="https://buy.stripe.com/14AeV6fFJ72g8CLcbz1Fe02" target="_blank">3 Months - $60</a>
+      <a href="https://buy.stripe.com/4gMdR2fFJdqEaKTcbz1Fe05" target="_blank">6 Months - $100</a>
+      <a href="https://buy.stripe.com/cNi00c3X11HW9GPb7v1Fe04" target="_blank">12 Months - $180</a>
+    </div>
+  </section>
+</main>
 
-    <section id="channels" class="brand-strip">
-      <span>NETFLIX</span><span>prime video</span><span>Disney+</span><span>HBO</span><span>hulu</span><span>beIN SPORTS</span><span>FOX SPORTS</span>
-    </section>
+<a class="whatsapp" href="https://wa.me/61410350514" target="_blank">WhatsApp</a>
 
-    <section id="features" class="section">
-      <h2>Why Choose Streamly<span>TV?</span></h2>
-      <div class="cards five">
-        <article><div class="icon">♢</div><h3>Reliable & Stable</h3><p>99.9% uptime with premium servers.</p></article>
-        <article><div class="icon">▣</div><h3>Works on Any Device</h3><p>Smart TV, Android, iOS, MAG, Firestick & more.</p></article>
-        <article><div class="icon">ϟ</div><h3>Instant Activation</h3><p>Get started in minutes after purchase.</p></article>
-        <article><div class="icon">☊</div><h3>24/7 Support</h3><p>We're here anytime you need help.</p></article>
-        <article><div class="icon">▢</div><h3>Secure & Private</h3><p>Your data is safe with us.</p></article>
-      </div>
-    </section>
+<div class="chat">
+  <div class="chat-header">StreamlyTV AI</div>
+  <div id="chatMessages" class="chat-messages">
+    <div class="bot">Hi 👋 Welcome to StreamlyTV. Ask me about prices, payment, setup, or support.</div>
+  </div>
+  <div class="quick-buttons">
+    <button onclick="quickAsk('prices')">Prices</button>
+    <button onclick="quickAsk('payment')">Payment Links</button>
+    <button onclick="quickAsk('setup')">Setup Help</button>
+    <button onclick="quickAsk('whatsapp')">WhatsApp</button>
+  </div>
+  <div class="chat-input">
+    <input id="userInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendMessage()" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
 
-    <section id="pricing" class="section price-section">
-      <h2>Choose Your <span>Plan</span></h2>
-      <div class="pricing-grid">
-        <article class="price-card">
-          <h3>3 MONTHS</h3><div class="price">$60</div>
-          <ul><li>50,000+ Live TV Channels</li><li>100,000+ Movies & TV Series</li><li>HD • FHD • 4K Quality</li><li>24/7 Customer Support</li><li>All Devices Supported</li></ul>
-          <a class="btn primary full" href="https://buy.stripe.com/14AeV6fFJ72g8CLcbz1Fe02">Get Started</a>
-        </article>
-        <article class="price-card popular">
-          <div class="tag">BEST VALUE</div><h3>6 MONTHS</h3><div class="price">$100</div>
-          <ul><li>50,000+ Live TV Channels</li><li>100,000+ Movies & TV Series</li><li>HD • FHD • 4K Quality</li><li>24/7 Customer Support</li><li>All Devices Supported</li></ul>
-          <a class="btn primary full" href="https://buy.stripe.com/4gMbIU6599aoaKT5Nb1Fe03">Get Started</a>
-        </article>
-        <article class="price-card">
-          <h3>12 MONTHS</h3><div class="price">$180</div>
-          <ul><li>50,000+ Live TV Channels</li><li>100,000+ Movies & TV Series</li><li>HD • FHD • 4K Quality</li><li>24/7 Customer Support</li><li>All Devices Supported</li></ul>
-          <a class="btn primary full" href="https://buy.stripe.com/cNi00c3X11HW9GPb7v1Fe04">Get Started</a>
-        </article>
-      </div>
-      <div class="guarantees"><span>▣ No Contracts</span><span>◎ Cancel Anytime</span><span>◎ Money Back Guarantee</span></div>
-    </section>
-
-    <aside class="chatbot">
-      <button id="closeChat">×</button>
-      <h3>🤖 AI Assistant <span>● Online</span></h3>
-      <p>Hi! 👋<br>Welcome to StreamlyTV. How can I help you today?</p>
-      <button>What channels do you offer?</button><button>How does it work?</button><button>Which devices are supported?</button><button>How do I subscribe?</button>
-      <div class="input">Type your message... ➤</div>
-    </aside>
-
-    <section class="section reviews">
-      <h2>What Our <span>Customers Say</span></h2>
-      <div class="cards three">
-        <article><div class="stars">★★★★★</div><p>Amazing service! So many channels and movies. The quality is excellent and support is always helpful.</p><b>– Sarah M.</b></article>
-        <article><div class="stars">★★★★★</div><p>Best IPTV service I've ever used. Super stable and easy to use on all my devices.</p><b>– James T.</b></article>
-        <article><div class="stars">★★★★★</div><p>Worth every penny! 4K quality is insane and the channel selection is huge.</p><b>– Ali K.</b></article>
-      </div>
-    </section>
-
-    <section id="faq" class="section faq">
-      <h2>FAQ</h2>
-      <details><summary>How do I subscribe?</summary><p>Choose a plan and pay securely. Then message us on WhatsApp for activation.</p></details>
-      <details><summary>What devices are supported?</summary><p>Smart TV, Android, iPhone, iPad, Firestick, MAG, PC and more.</p></details>
-      <details><summary>Do you offer support?</summary><p>Yes, we offer 24/7 customer support.</p></details>
-    </section>
-  </main>
-
-  <a class="floating-whatsapp" href="https://wa.me/61410350514">☘<small>Chat on WhatsApp</small></a>
-
-  <footer id="contact">
-    <div class="brand"><div class="logo">▶</div><span>Streamly<span>TV</span></span></div>
-    <div>☘ <b>WhatsApp</b><br>0410 350 514</div>
-    <div>✉ <b>Email Us</b><br>iptvstreamly@gmail.com</div>
-    <div>☊ <b>24/7 Support</b><br>We're here to help!</div>
-  </footer>
+<script src="script.js"></script>
 </body>
 </html>
